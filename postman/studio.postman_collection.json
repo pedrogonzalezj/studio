@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "1c5e98af-2cd6-4903-9c91-39e16a400c8f",
+		"name": "studio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34427290"
+	},
+	"item": [
+		{
+			"name": "list classes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/classes",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"classes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get class",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/classes/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"classes",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "b71626cb-4426-4406-9560-2344183d0ae6",
+							"description": "class uuid"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create classes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"yoga\",\n    \"startDate\": \"2024-01-06\",\n    \"endDate\": \"2024-01-08\",\n    \"capacity\": 20\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/classes",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"classes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book class",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"member\": \"Jane Doe\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/classes/:classDate/bookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"classes",
+						":classDate",
+						"bookings"
+					],
+					"variable": [
+						{
+							"key": "classDate",
+							"value": "2024-01-06",
+							"description": "class date in format yyyy-MM-dd"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
